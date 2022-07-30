@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navigate, Route} from 'react-router';
+import {Route} from 'react-router';
 import {apiDocsPlugin, ApiExplorerPage} from '@backstage/plugin-api-docs';
 import {
     CatalogEntityPage,
@@ -37,6 +37,7 @@ import {HomepageCompositionRoot} from '@backstage/plugin-home';
 import {HomePage} from './components/home/HomePage';
 import {githubAuthApiRef} from '@backstage/core-plugin-api';
 import {SignInPage} from '@backstage/core-components';
+import { UsersPagePage } from '@internal/plugin-users-page';
 
 const app = createApp({
     apis,
@@ -112,6 +113,7 @@ const routes = (
         </Route>
         <Route path="/settings" element={<UserSettingsPage/>}/>
         <Route path="/catalog-graph" element={<CatalogGraphPage/>}/>
+        <Route path="/users-page" element={<UsersPagePage />}/>
     </FlatRoutes>
 );
 
